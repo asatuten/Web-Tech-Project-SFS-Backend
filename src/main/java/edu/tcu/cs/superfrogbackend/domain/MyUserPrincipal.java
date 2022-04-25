@@ -1,3 +1,4 @@
+/*
 package edu.tcu.cs.superfrogbackend.domain;
 
 import org.springframework.security.core.GrantedAuthority;
@@ -19,7 +20,7 @@ public class MyUserPrincipal implements UserDetails {
 
         // Convert a user's roles from space-delimited string to a list of SimpleGrantedAuthority objects
         // E.g., john's roles are stored in a string like "admin user moderator", we need to convert it to a list of GrantedAuthority
-        this.authorities = Arrays.stream(StringUtils.tokenizeToStringArray(user.getRoles(), " "))
+        this.authorities = Arrays.stream(StringUtils.tokenizeToStringArray(user.getRole(), " "))
                 .map(SimpleGrantedAuthority::new)
                 .collect(Collectors.toList());
     }
@@ -68,6 +69,31 @@ public class MyUserPrincipal implements UserDetails {
     }
 
     @Override
+    public String getUsername() {
+        return null;
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return false;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return false;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return false;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return false;
+    }
+
+    @Override
     public boolean isInactive() {
         return user.isInactive();
     }
@@ -76,3 +102,4 @@ public class MyUserPrincipal implements UserDetails {
         return user;
     }
 }
+*/

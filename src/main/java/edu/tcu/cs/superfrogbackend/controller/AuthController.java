@@ -1,3 +1,4 @@
+/*
 package edu.tcu.cs.superfrogbackend.controller;
 
 import edu.tcu.cs.superfrogbackend.domain.Result;
@@ -19,9 +20,11 @@ public class AuthController {
      *
      * @return JWT token
      */
+    /*
     @PostMapping("/login")
     public Result login(Authentication authentication) throws Exception {
         System.out.println(authentication.getAuthorities());
         return new Result(true, StatusCode.SUCCESS, "JWT Token and User Info", authService.createLoginInfo(authentication));
     }
 }
+*/

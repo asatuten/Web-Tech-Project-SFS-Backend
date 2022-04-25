@@ -18,7 +18,7 @@ public class Request implements Serializable {
     private String assigned;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private String id;
+    private Integer id;
 
 
     public Request() {
@@ -119,11 +119,11 @@ public class Request implements Serializable {
         this.assigned = assigned;
     }
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 }

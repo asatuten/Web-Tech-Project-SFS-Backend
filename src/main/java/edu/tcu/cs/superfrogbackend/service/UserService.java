@@ -1,7 +1,7 @@
 package edu.tcu.cs.superfrogbackend.service;
 
 import edu.tcu.cs.superfrogbackend.dao.UserDao;
-import edu.tcu.cs.superfrogbackend.domain.MyUserPrincipal;
+//import edu.tcu.cs.superfrogbackend.domain.MyUserPrincipal;
 import edu.tcu.cs.superfrogbackend.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -15,7 +15,7 @@ import java.util.List;
 
 @Service
 @Transactional
-public class UserService implements UserDetailsService {
+public class UserService {
     private UserDao userDao;
     private PasswordEncoder encoder;
 
@@ -46,10 +46,14 @@ public class UserService implements UserDetailsService {
         userDao.save(user);
     }
 
+    //change to only deactivate acct
     public void deleteById(Integer id) {
         userDao.deleteById(id);
     }
-
+    //public void deactivateById(Integer id) {
+       // userDao.deactivateById(id);
+    //}
+/*
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         // Step 1, we need to find this user from DB
@@ -61,4 +65,6 @@ public class UserService implements UserDetailsService {
         // Otherwise, wrap the returned user instance in a MyUserPrincipal instance
         return new MyUserPrincipal(user); // return the principal-
     }
+
+ */
 }

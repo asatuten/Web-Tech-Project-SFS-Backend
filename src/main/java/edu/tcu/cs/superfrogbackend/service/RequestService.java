@@ -25,21 +25,20 @@ public class RequestService {
         return requestDao.findAll();
     }
 
-    public Request findById(String requestId) {
+    public Request findById(Integer requestId) {
         return requestDao.findById(requestId).get();
     }
 
     public void save(Request newRequest) {
-        newRequest.setId(idWorker.nextId() + "");
         requestDao.save(newRequest);
     }
 
-    public void update(String requestId, Request updatedRequest) {
+    public void update(Integer requestId, Request updatedRequest) {
         updatedRequest.setId(requestId);
         requestDao.save(updatedRequest);
     }
 
-    public void delete(String requestId) {
+    public void delete(Integer requestId) {
         requestDao.deleteById(requestId);
     }
 }
