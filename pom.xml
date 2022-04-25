@@ -9,12 +9,12 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>edu.tcu.cs</groupId>
-    <artifactId>hogwartsartifactsonline</artifactId>
+    <artifactId>superfrogbackend</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>hogwartsartifactsonline</name>
-    <description>hogwartsartifactsonline</description>
+    <name>superfrogbackend</name>
+    <description>superfrogbackend</description>
     <properties>
-        <java.version>11</java.version>
+        <java.version>18</java.version>
     </properties>
     <dependencies>
         <dependency>
