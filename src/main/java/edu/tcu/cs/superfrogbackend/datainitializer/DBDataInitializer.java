@@ -37,5 +37,7 @@ public class DBDataInitializer implements CommandLineRunner {
 
         userService.save(u1);
 
+        system.out.println("Hello World");
+
     }
 }
