@@ -9,8 +9,7 @@ import java.io.Serializable;
 @Entity
 public class User implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private String id;
     private String name;
     private String lname;
     private String email;
@@ -21,11 +20,11 @@ public class User implements Serializable {
     public User() {
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 

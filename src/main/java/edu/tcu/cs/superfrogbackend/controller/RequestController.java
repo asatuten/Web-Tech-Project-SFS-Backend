@@ -26,7 +26,7 @@ public class RequestController {
     }
 
     @GetMapping("/{requestId}")
-    public Result findById(@PathVariable Integer requestId) {
+    public Result findById(@PathVariable String requestId) {
         return new Result(true, StatusCode.SUCCESS, "Find One Success", requestService.findById(requestId));
     }
 
@@ -37,13 +37,13 @@ public class RequestController {
     }
 
     @PutMapping("/{requestId}")
-    public Result update(@PathVariable Integer requestId, @RequestBody Request updatedRequest) {
+    public Result update(@PathVariable String requestId, @RequestBody Request updatedRequest) {
         requestService.update(requestId, updatedRequest);
         return new Result(true, StatusCode.SUCCESS, "Update Success");
     }
 
     @DeleteMapping("/{requestId}")
-    public Result delete(@PathVariable Integer requestId) {
+    public Result delete(@PathVariable String requestId) {
         requestService.delete(requestId);
         return new Result(true, StatusCode.SUCCESS, "Delete Success");
     }

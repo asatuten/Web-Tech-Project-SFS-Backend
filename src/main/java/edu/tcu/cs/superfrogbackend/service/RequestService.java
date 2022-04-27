@@ -25,7 +25,7 @@ public class RequestService {
         return requestDao.findAll();
     }
 
-    public Request findById(Integer requestId) {
+    public Request findById(String requestId) {
         return requestDao.findById(requestId).get();
     }
 
@@ -33,12 +33,12 @@ public class RequestService {
         requestDao.save(newRequest);
     }
 
-    public void update(Integer requestId, Request updatedRequest) {
+    public void update(String requestId, Request updatedRequest) {
         updatedRequest.setId(requestId);
         requestDao.save(updatedRequest);
     }
 
-    public void delete(Integer requestId) {
+    public void delete(String requestId) {
         requestDao.deleteById(requestId);
     }
 }

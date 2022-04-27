@@ -21,7 +21,7 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    public Result findById(@PathVariable Integer id) {
+    public Result findById(@PathVariable String id) {
         return new Result(true, StatusCode.SUCCESS, "Find One Success", service.findById(id));
     }
 
@@ -32,13 +32,13 @@ public class UserController {
     }
 
     @PutMapping("/{id}")
-    public Result update(@RequestBody User user, @PathVariable Integer id) {
+    public Result update(@RequestBody User user, @PathVariable String id) {
         service.update(id, user);
         return new Result(true, StatusCode.SUCCESS, "Update Success");
     }
 
     @DeleteMapping("/{id}")
-    public Result delete(@PathVariable Integer id) {
+    public Result delete(@PathVariable String id) {
         service.deleteById(id);
         return new Result(true, StatusCode.SUCCESS, "Delete Success");
     }
