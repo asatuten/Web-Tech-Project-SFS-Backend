@@ -4,10 +4,10 @@ import edu.tcu.cs.superfrogbackend.dao.UserDao;
 //import edu.tcu.cs.superfrogbackend.domain.MyUserPrincipal;
 import edu.tcu.cs.superfrogbackend.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.UserDetails;
+/*import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;*/
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -17,16 +17,16 @@ import java.util.List;
 @Transactional
 public class UserService {
     private UserDao userDao;
-    private PasswordEncoder encoder;
+    // private PasswordEncoder encoder;
 
     public UserService(UserDao userDao) {
         this.userDao = userDao;
     }
 
-    @Autowired
-    public void setEncoder(PasswordEncoder encoder) {
+    // @Autowired
+    /*public void setEncoder(PasswordEncoder encoder) {
         this.encoder = encoder;
-    }
+    }*/
 
     public List<User> findAll() {
         return userDao.findAll();
@@ -37,7 +37,7 @@ public class UserService {
     }
 
     public void save(User user) {
-        user.setPassword(encoder.encode(user.getPassword()));
+        // user.setPassword(encoder.encode(user.getPassword()));
         userDao.save(user);
     }
 
